@@ -1,0 +1,156 @@
+:root {
+    --color-bg: #0f172a;
+    --color-bg-gradient: #1e293b;
+    --color-card: #1e293b;
+    --color-border: #334155;
+    --color-text: #f1f5f9;
+    --color-muted: #94a3b8;
+    --color-accent: #38bdf8;
+    --color-up: #22c55e;
+    --color-down: #ef4444;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    color: var(--color-text);
+    background: linear-gradient(135deg, var(--color-bg), var(--color-bg-gradient));
+}
+
+.container {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cabeçalho */
+.header {
+    text-align: center;
+}
+
+.header__title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.header__subtitle {
+    margin-top: 4px;
+    color: var(--color-muted);
+}
+
+/* Cards */
+.card {
+    padding: 24px;
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.card--main {
+    border-top: 4px solid var(--color-accent);
+}
+
+.card--high {
+    border-top: 4px solid var(--color-up);
+}
+
+.card--low {
+    border-top: 4px solid var(--color-down);
+}
+
+.card__label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+}
+
+.card--high .card__label {
+    color: var(--color-up);
+}
+
+.card--low .card__label {
+    color: var(--color-down);
+}
+
+.card__value {
+    margin-top: 8px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+.card__value--large {
+    font-size: 3rem;
+    color: var(--color-accent);
+}
+
+.card__variation {
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+.card__variation--up {
+    color: var(--color-up);
+}
+
+.card__variation--down {
+    color: var(--color-down);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Status e rodapé */
+.status {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+.status--error {
+    color: var(--color-down);
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+.footer a {
+    color: var(--color-accent);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card__value--large {
+        font-size: 2.4rem;
+    }
+}

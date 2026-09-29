@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Recarrega a página a cada 10 segundos para atualizar a cotação -->
+    <meta http-equiv="refresh" content="10">
+    <meta name="description" content="Cotação do Dólar (USD/BRL) em tempo real via AwesomeAPI">
+    <title>Cotação do Dólar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="header__title">Cotação do Dólar</h1>
+            <p class="header__subtitle">USD / BRL &middot; Dólar Americano para Real Brasileiro</p>
+        </header>
+
+        <section class="card card--main" aria-labelledby="label-atual">
+            <h2 id="label-atual" class="card__label">Valor atual</h2>
+            <p id="valor-atual" class="card__value card__value--large" aria-live="polite">--</p>
+            <p id="variacao" class="card__variation"></p>
+        </section>
+
+        <div class="grid">
+            <section class="card card--high" aria-labelledby="label-maximo">
+                <h2 id="label-maximo" class="card__label">&#9650; Maior valor do dia</h2>
+                <p id="valor-maximo" class="card__value">--</p>
+            </section>
+
+            <section class="card card--low" aria-labelledby="label-minimo">
+                <h2 id="label-minimo" class="card__label">&#9660; Menor valor do dia</h2>
+                <p id="valor-minimo" class="card__value">--</p>
+            </section>
+        </div>
+
+        <p id="status" class="status" role="status">Carregando cotação...</p>
+
+        <footer class="footer">
+            <p>
+                Dados fornecidos por
+                <a href="https://docs.awesomeapi.com.br/api-de-moedas" target="_blank" rel="noopener noreferrer">AwesomeAPI</a>
+                &middot; Atualização automática a cada 10 segundos
+            </p>
+        </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
